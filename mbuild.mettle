@@ -1,0 +1,14 @@
+import "mbuild/api";
+
+fn project() {
+  mb_package("mettle_boids", "0.1.0");
+  mb_meta("description", "Boids flocking on the GPU with OpenGL compute shaders");
+  mb_meta("license", "Apache-2.0");
+  mb_bin("boids", "src/main.mettle");
+  mb_watch("shaders/**");
+  mb_agents(false);
+}
+
+fn deps() {
+  mb_dep_path("glint", "../mettle/glint");
+}
